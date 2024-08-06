@@ -30,7 +30,7 @@ a {
 header {
     display: flex;
     align-items: flex-end;
-    min-height: 120px;
+    min-height: 140px;
     background-image: url(images/dark2.jpg);
     background-size: 100% 100%;
     color: white;
