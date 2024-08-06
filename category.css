@@ -1,0 +1,251 @@
+
+.icon {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 30px;
+     height: 30px;
+     fill: #333;
+     transition: fill 0.3s;
+}
+ 
+.icon:hover {
+     fill: #3cb371;
+ }
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: flex-end;
+    min-height: 120px;
+    background-image: url(images/dark2.jpg);
+    background-size: 100% 100%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin: 8px 4px;
+    border-radius: 12px;
+    padding: 0px 8px;
+}
+
+/* Main Section Styles */
+main {
+    padding: 0.5rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0.5rem;
+    padding-bottom: 68px;
+}
+
+/* Category Box Styles */
+.category-box {
+    position: relative;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    
+}
+
+.category-box:hover {
+    transform: translateY(-5px);
+}
+
+.category-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.category-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Background Images for Category Boxes */
+.fruits-vegetables::before {
+    background-image: url(images/foodstuffs.jpg);
+}
+
+.dairy-eggs::before {
+    background-image: url(images/dairy_products.jpg);
+}
+
+.meat-seafood::before {
+    background-image: url(images/fish.jpg);
+}
+
+.drinks::before {
+    background-image: url(images/5alive.png);
+}
+
+.bakery-bread::before {
+    background-image: url(images/bread3.jpg);
+}
+
+.snacks::before {
+    background-image: url(images/secret\ bite\ bst.jpeg);
+}
+
+.provision::before {
+    background-image: url(images/Rice.jpeg);
+}
+
+.frozen-foods::before {
+    background-image: url(images/frozen_chicken.jpeg);
+}
+
+.health-wellness::before {
+    background-image: url(images/green\ tea.jpeg);
+}
+
+.household-essentials::before {
+    background-image: url(images/house_holds.jpg);
+}
+
+.baby-care::before {
+    background-image: url(images/baby\ pears.jpeg);
+}
+
+.personal-care::before {
+    background-image: url(images/extract.jpeg);
+}
+
+/* Bottom Navigation Bar Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #c19c2c;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(234, 169, 18);
+    font-size: 12px;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: #96690e;
+}
+
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: fill 0.3s;
+}
+
+.nav-item:hover svg {
+    fill: #96690e;
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .category-box {
+        height: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .category-box {
+        height: 220px;
+    }
+}
+
+@media (min-width: 992px) {
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .category-box {
+        height: 240px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .category-box {
+        height: 260px;
+    }
+}
+
+
+        
+  

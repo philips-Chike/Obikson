@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Your Cart</h1>
+            <a href="index.html" class="back-to-home">Continue Shopping</a>
+        </div>
+    </header>
+
+    <section id="cartContainer" class="cart-list container">
+        <!-- Cart items will be rendered here -->
+    </section>
+
+    <footer class="bottom-nav">
+        <nav>
+            <ul>
+                <li id="homeNav">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3l-10-9-10 9h3v8z"/>
+                    </svg>
+                    Home
+                </li>
+                <li id="productsNav">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M3 4v16h18v-16h-18zm16 14h-14v-12h14v12zm-7-10h-2v8h2v-8zm4 0h-2v8h2v-8zm-10 0h2v8h-2v-8z"/>
+                    </svg>
+                    Products
+                </li>
+                <li id="cartNav">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7 4h-2v2h2l3.6 7.59-1.35 2.44c-.21.38-.25.84-.13 1.26.13.42.43.77.82.97.39.2.85.22 1.26.06.42-.16.77-.46.97-.84l1.55-2.81h4.5c.75 0 1.41-.41 1.73-1.06l3.58-6.49c.19-.34.29-.72.29-1.11 0-.39-.1-.77-.29-1.11-.19-.34-.46-.61-.79-.79s-.72-.29-1.11-.29h-14v-2h-2v2zm0 2v2h2v-2h-2zm2 4h11.02l-3.58 6.49-1.55 2.81-1.35-2.44 3.6-7.59h-8.14zm9.98 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-9.98 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                    Cart
+                </li>
+                <li id="contactNav">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M2.01 21l-0.01-2 7.99-7.99 5 5-7.99 7.99h-5zm14.5-14c0-2.48-2.01-4.5-4.5-4.5s-4.5 2.02-4.5 4.5c0 1.18 0.47 2.25 1.23 3.02l2.27-2.27c0.4-0.4 1.03-0.39 1.41 0 0.4 0.4 0.39 1.03 0 1.41l-2.27 2.27c0.76 0.77 1.84 1.23 3.02 1.23 2.48 0 4.5-2.01 4.5-4.5z"/>
+                    </svg>
+                    Contact
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+    
+    const products = [
+    {
+        id: 1,
+        name: 'Apple',
+        description: 'Fresh and crispy apples',
+        price: 1.99,
+        category: 'fresh',
+        image: 'https://via.placeholder.com/100'
+    },
+    {
+        id: 2,
+        name: 'Banana',
+        description: 'Sweet bananas',
+        price: 0.99,
+        category: 'fresh',
+        image: 'https://via.placeholder.com/100'
+    },
+    {
+        id: 3,
+        name: 'Bread',
+        description: 'Whole grain bread',
+        price: 2.49,
+        category: 'bakery',
+        image: 'https://via.placeholder.com/100'
+    },
+    {
+        id: 4,
+        name: 'Milk',
+        description: 'Organic whole milk',
+        price: 3.49,
+        category: 'dairy',
+        image: 'https://via.placeholder.com/100'
+    },
+    {
+        id: 5,
+        name: 'Chicken',
+        description: 'Fresh chicken breasts',
+        price: 5.99,
+        category: 'meat',
+        image: 'https://via.placeholder.com/100'
+    }
+];
+
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+// Function to render cart items
+function renderCart() {
+    const cartContainer = document.getElementById('cartContainer');
+    cartContainer.innerHTML = ''; // Clear existing items
+
+    let cartTotal = 0;
+    cartItems.forEach(item => {
+        const product = products.find(p => p.id === item.id);
+        const itemTotal = product.price * item.quantity;
+        cartTotal += itemTotal;
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <div class="cart-item-image">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">${product.name}</div>
+                <div class="cart-item-price">$${product.price.toFixed(2)}</div>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn decrease" data-id="${product.id}">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="quantity-btn increase" data-id="${product.id}">+</button>
+                </div>
+                <div class="cart-item-total">$${itemTotal.toFixed(2)}</div>
+            </div>
+            <button class="remove-item" data-id="${product.id}">Remove</button>
+        `;
+        cartContainer.appendChild(cartItem);
+    });
+
+    const cartTotalElement = document.createElement('div');
+    cartTotalElement.classList.add('cart-total');
+    cartTotalElement.innerHTML = `
+        <div>Total: $${cartTotal.toFixed(2)}</div>
+        <button id="checkoutButton">Checkout</button>
+    `;
+    cartContainer.appendChild(cartTotalElement);
+}
+
+// Function to update item quantity
+function updateItemQuantity(productId, change) {
+    const existingItem = cartItems.find(item => item.id === productId);
+
+    if (existingItem) {
+        existingItem.quantity += change;
+
+        if (existingItem.quantity <= 0) {
+            cartItems = cartItems.filter(item => item.id !== productId);
+        }
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    renderCart();
+}
+
+// Event listener for quantity buttons
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('quantity-btn')) {
+        const productId = parseInt(event.target.dataset.id, 10);
+        const change = event.target.classList.contains('increase') ? 1 : -1;
+        updateItemQuantity(productId, change);
+    } else if (event.target.classList.contains('remove-item')) {
+        const productId = parseInt(event.target.dataset.id, 10);
+        cartItems = cartItems.filter(item => item.id !== productId);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        renderCart();
+    } else if (event.target.id === 'checkoutButton') {
+        alert('Proceeding to checkout!');
+    }
+});
+
+// Render cart on page load
+renderCart();
+
+</script>
+</body>
+</html>

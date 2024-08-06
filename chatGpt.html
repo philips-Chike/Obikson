@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-Tricks Clone</title>
+  <style>
+    /* Reset CSS */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+  
+    a {
+      text-decoration: none;
+      color: #0073e6;
+    }
+  
+    /* Header */
+    header {
+      background-color: #0073e6;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+    header h1 {
+      font-size: 28px;
+    }
+  
+    /* Navigation */
+    nav {
+      background-color: #f8f8f8;
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    nav ul {
+      list-style-type: none;
+    }
+  
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+      transition: transform 0.3s ease; /* Added transition */
+    }
+  
+    nav ul li:hover {
+      transform: translateY(-3px); /* Added hover effect */
+      background-color: red;
+    }
+  
+    nav ul li a {
+      color: #333;
+    }
+  
+    /* Main content */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+  
+    /* Featured articles */
+    .featured {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+  
+    .featured .article {
+      width: calc(50% - 10px);
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .featured .article img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  
+    .featured .article h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    .featured .article p {
+      color: #888;
+    }
+  
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+  
+  </style>
+  
+  
+</head>
+<body>
+  <header>
+    <h1>CSS-Tricks Clone</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">Guides</a></li>
+      <li><a href="#">Almanac</a></li>
+      <li><a href="#">Demos</a></li>
+      <li><a href="#">Jobs</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="featured">
+      <div class="article">
+        <img src="article1.jpg" alt="Article 1">
+        <h2><a href="#">Article 1 Title</a></h2>
+        <p>Description of Article 1</p>
+      </div>
+      <div class="article">
+        <img src="article2.jpg" alt="Article 2">
+        <h2><a href="#">Article 2 Title</a></h2>
+        <p>Description of Article 2</p>
+      </div>
+      <!-- Add more featured articles here -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CSS-Tricks Clone. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+    /* Global Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        background-color: #edeee3; /* Set the default background color */
+    }
+    
+    .landing-page {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden; /* Prevents scrolling */
+    }
+    
+    /* Upper Section Styles */
+    .upper-section {
+        position: relative;
+        flex: 0 0 60%; /* Takes 60% of the screen height */
+        background-image: url(images/ice\ coke.avif);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        border-radius: 0 0 25% 25%; /* Convex curve */
+        color: white;
+        text-shadow: 2px 2px 8px rgb(0, 0, 0, 0.7);
+        animation: slideshow 40s infinite; /* Slideshow animation */
+        
+    }
+    
+    /* Keyframes for the Slideshow Animation */
+    @keyframes slideshow {
+        0% {
+            background-image: url(images/white\ can.avif);
+        }
+        25% {
+            background-image: url(images/straw.avif);
+        }
+        50% {
+            background-image: url(images/coke\ 2.avif);
+        }
+        75% {
+            background-image: url(images/fire\ coke.avif);
+        }
+        100% {
+            background-image: url(images/white\ can.avif);
+        }
+        
+    }
+    
+    .upper-section h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        z-index: 2;
+    }
+    
+    
+    /* Lower Section Styles */
+    .lower-section {
+        flex: 1; /* Takes the remaining 40% of the screen height */
+        background-color: #edeee3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        
+    }
+    
+    .lower-section h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .lower-section .shop-now-btn {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        padding: 12px 25px;
+        background-color: #c19c2c;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .lower-section .shop-now-btn:hover {
+        background-color: #ad1d10;
+    }
+    
+    /* Media Queries for Responsive Design */
+    @media (min-width: 768px) {
+        .landing-page {
+            flex-direction: row; /* Change layout to row for larger screens */
+        }
+    
+        .upper-section,
+        .lower-section {
+            flex: 1; /* Equal distribution on larger screens */
+            height: 100vh;
+        }
+    
+        .upper-section::after {
+            height: 50px; /* Adjust convex shape for larger screens */
+            bottom: -20px;
+        }
+    
+        .lower-section h2 {
+            font-size: 2rem; /* Increase font size for larger screens */
+        }
+    
+        .lower-section .shop-now-btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+        }
+    }
+    
+    @media (min-width: 1200px) {
+        .lower-section h2 {
+            font-size: 2.5rem; /* Further increase font size for wide screens */
+        }
+    
+        .lower-section .shop-now-btn {
+            font-size: 1.5rem;
+            padding: 20px 40px;
+            
+        }
+    }
+    

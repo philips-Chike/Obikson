@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obikson Supermarket - Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Obikson Supermarket</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>Products</span>
+            </div>
+        </div>
+        
+    </header>
+
+    <section class="controls container">
+        <input type="text" id="searchBox" placeholder="Search products..." />
+
+        <div class="filter-sort">
+            <div class="filter">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="bakery">Bakery</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="frozen">Frozen</option>
+                    <option value="fruits">Fruits & Vegetables</option>
+                    <option value="meat">Meat & Seafood</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="grains">Grains</option>
+                    <option value="spices">Spices</option>
+                    <option value="canned">Canned Goods</option>
+                    <option value="cleaning">Cleaning Products</option>
+                    <option value="personal-care">Personal Care</option>
+                </select>
+            </div>
+
+            <div class="sort">
+                <label for="sortOptions">Sort by:</label><br>
+                <select id="sortOptions">
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                    <option value="name-a-z">Name: A to Z</option>
+                    <option value="name-z-a">Name: Z to A</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-list container">
+        <div id="productsContainer" class="products">
+            <!-- Product items will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="contact.html" class="nav-item">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M21 8V7l-3 2-2-1.5V12l2 1.5 3-2V11l3 2v2h-3l-2 1.5v4l3-2v-1l3-2v-2l-3 2v-1l-2-1.5V9l-2 1.5v1L14 8V7l3 2 3-2V6h3l-2 1.5V9l-3 2v-1l-2-1.5v-4l2 1.5L21 6h3l-3 2z"/>
+                </svg>
+                <span>Contact</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm-1 4h2v6h-2v-6zm8.74 3.24A7.984 7.984 0 0 0 20 12c0-2.89-1.53-5.44-3.88-6.89C15.75 4.03 14.39 4 13 4h-2C8.82 4 7.32 4.51 6.11 5.36c-1.08.73-1.99 1.76-2.56 2.92-.2.39-.3.81-.3 1.24s.11.85.3 1.24A7.935 7.935 0 0 0 4 12c0 2.89 1.53 5.44 3.88 6.89C8.25 19.97 9.61 20 11 20h2c.18 0 .36 0 .54-.02c.58-.06 1.16-.18 1.72-.34A7.96 7.96 0 0 0 19 19.99c.3-.23.59-.46.84-.75c.2-.23.38-.47.56-.72c.23-.31.43-.63.62-.98c.15-.27.28-.55.38-.84c.12-.33.22-.67.32-1.02c.08-.28.14-.56.18-.84c.02-.13.04-.25.05-.37.01-.13.02-.26.02-.39c.01-.27.01-.53.01-.8c-.01-.25-.01-.49-.02-.73-.02-.1-.02-.21-.05-.31-.01-.05-.01-.1-.02-.15l-.03-.15c-.05-.29-.14-.57-.25-.84c-.13-.33-.28-.66-.44-.97c-.08-.16-.16-.33-.25-.49c-.22-.4-.48-.78-.75-1.13c-.13-.18-.26-.35-.41-.52c-.15-.16-.32-.32-.5-.47c-.23-.2-.48-.38-.73-.54c-.14-.09-.29-.18-.44-.26c-.21-.11-.43-.21-.65-.31c-.29-.13-.59-.25-.9-.36c-.34-.13-.68-.25-1.04-.35c-.35-.1-.71-.18-1.07-.25c-.32-.06-.64-.12-.97-.15c-.31-.03-.63-.05-.95-.06c-.04 0-.07-.01-.11-.01c-.04 0-.09-.01-.13-.01c-.07 0-.15-.01-.22-.01h-.28z"/>
+                </svg>
+                <span>About</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM7.58 11l.92-2h9.68l.73 2H7.58zm-2.58-4h14.22c.85 0 1.33-.95.92-1.64l-3.22-5.48C16.67.2 16.25 0 15.78 0H5.42c-.58 0-1.1.39-1.23.95l-2.52 9.15c-.1.34.03.71.3.92.27.2.64.27.98.13L3 11h.42l.16-.55 1.33-4.58L5.58 7h9.69c.12 0 .23-.02.34-.06l-.78-2H6.13L5.56 5z"/>
+                </svg>
+                <span>Cart</span>
+            </a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const productsContainer = document.getElementById("productsContainer");
+    const searchBox = document.getElementById("searchBox");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const sortOptions = document.getElementById("sortOptions");
+
+    // Sample Product Data
+    const products = [
+        { id: 1, name: "Fresh Milk", description: "1L Full Cream Milk", price: 2.99, category: "dairy", image: "images/ketchup.jpeg" },
+        { id: 2, name: "Whole Wheat Bread", description: "Whole Wheat Loaf", price: 1.49, category: "bakery", image: "images/bama.jpg" },
+        { id: 3, name: "Orange Juice", description: "Freshly Squeezed", price: 3.99, category: "beverages", image: "images/orange-juice.jpg" },
+        { id: 4, name: "Frozen Peas", description: "500g Pack", price: 2.29, category: "frozen", image: "images/peas.jpg" },
+        { id: 5, name: "Bananas", description: "Bunch of Bananas", price: 1.99, category: "fruits", image: "images/bananas.jpg" },
+        { id: 6, name: "Chicken Breast", description: "500g Boneless", price: 5.49, category: "meat", image: "images/chicken.jpg" },
+        { id: 7, name: "Potato Chips", description: "Crispy Salted", price: 1.99, category: "snacks", image: "images/chips.jpg" },
+        { id: 8, name: "Rice", description: "1kg Basmati Rice", price: 4.49, category: "grains", image: "images/rice.jpeg" },
+        { id: 9, name: "Black Pepper", description: "Ground Black Pepper", price: 0.99, category: "spices", image: "images/pepper.jpg" },
+        { id: 10, name: "Canned Tomatoes", description: "400g Canned Tomatoes", price: 1.29, category: "canned", image: "images/tomatoes.jpg" },
+        { id: 11, name: "Dish Soap", description: "Lemon Scented", price: 2.59, category: "cleaning", image: "images/soap.jpg" },
+        { id: 12, name: "Shampoo", description: "Herbal Essence", price: 4.99, category: "personal-care", image: "images/shampoo.jpg" }
+    ];
+
+    let displayedProducts = [...products];
+    let startIndex = 0;
+    const loadCount = 10; // Number of products to load at a time for infinite scrolling
+
+    // Function to display products
+    const displayProducts = () => {
+        // Clear current products
+        productsContainer.innerHTML = "";
+
+        // Load a batch of products
+        const productsToDisplay = displayedProducts.slice(startIndex, startIndex + loadCount);
+
+        productsToDisplay.forEach(product => {
+            const productBox = document.createElement("a");
+            productBox.className = "product-box";
+            productBox.href = "#"; // Link for detailed product page
+            productBox.addEventListener("click", () => showProductDetail(product));
+
+            productBox.innerHTML = `
+                <div class="product-image">i
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <p class="product-price">N${product.price.toFixed(2)}</p>
+                </div>
+                <button class="add-to-cart">Add to Cart</button>
+            `;
+
+            productsContainer.appendChild(productBox);
+        });
+
+        // Update startIndex for next batch
+        startIndex += loadCount;
+    };
+
+    // Function to handle search
+    const searchProducts = () => {
+        const searchTerm = searchBox.value.toLowerCase();
+        displayedProducts = products.filter(product =>
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm)
+        );
+        startIndex = 0; // Reset startIndex for new search
+        displayProducts();
+    };
+
+    // Function to filter by category
+    const filterProductsByCategory = () => {
+        const selectedCategory = categoryFilter.value;
+        displayedProducts = selectedCategory === "all" ? products : products.filter(product => product.category === selectedCategory);
+        startIndex = 0; // Reset startIndex for new filter
+        displayProducts();
+    };
+
+    // Function to sort products
+    const sortProducts = () => {
+        const selectedSort = sortOptions.value;
+        displayedProducts.sort((a, b) => {
+            switch (selectedSort) {
+                case "price-low-high":
+                    return a.price - b.price;
+                case "price-high-low":
+                    return b.price - a.price;
+                case "name-a-z":
+                    return a.name.localeCompare(b.name);
+                case "name-z-a":
+                    return b.name.localeCompare(a.name);
+                default:
+                    return 0;
+            }
+        });
+        startIndex = 0; // Reset startIndex for new sort
+        displayProducts();
+    };
+
+    // Infinite Scrolling
+    const handleInfiniteScroll = () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            displayProducts();
+        }
+    };
+
+    // Event Listeners
+    searchBox.addEventListener("input", searchProducts);
+    categoryFilter.addEventListener("change", filterProductsByCategory);
+    sortOptions.addEventListener("change", sortProducts);
+    window.addEventListener("scroll", handleInfiniteScroll);
+
+    // Function to display product details
+    const showProductDetail = (product) => {
+        alert(`Showing details for ${product.name}`);
+        // Implement actual detail view logic here
+    };
+
+    // Initial product display
+    displayProducts();
+});
+
+    </script>
+</body>
+</html>

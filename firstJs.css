@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(219, 240, 224);
+}
+
+#me {
+    background-image: url(dairy_products2.jpg);
+    height: 300px;
+    width: 300px;
+    outline: 5px solid green;
+}
