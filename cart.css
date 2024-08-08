@@ -138,7 +138,7 @@ select {
 .bottom-nav {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 4px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -155,7 +155,7 @@ select {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 40px;
+    gap: 10px;
 }
 
 .bottom-nav li {
@@ -167,13 +167,13 @@ select {
 }
 
 .bottom-nav li:hover {
-    color: #4caf50;
+    color: #4caf50; 
 }
 
 .bottom-nav svg {
     width: 24px;
-    height: 24px;
-    margin-bottom: 5px;
+    height: 18px;
+    margin-bottom: 2px;
     fill: currentColor;
 }
 
